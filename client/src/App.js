@@ -6,7 +6,7 @@ import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
 import Products from "./components/Products";
 import ProductsForm from './components/ProductsForm';
-
+import ProductView from './components/ProductView';
 import { Container, } from "semantic-ui-react";
 
 
@@ -16,9 +16,10 @@ const App = () => (
     <Container>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/products" component={Products} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/products" component={Products} />
         <Route exact path="/products/new" component={ProductsForm} />
+        <Route exact path="/products/:id" component={ProductView} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
