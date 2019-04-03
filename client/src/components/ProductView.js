@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Button, Header, Segment, } from "semantic-ui-react";
 
-class ProductReview extends React.Component {
+class ProductView extends React.Component {
   state = { product: {}, };
 
   componentDidMount() {
@@ -36,4 +36,4 @@ class ProductReview extends React.Component {
   }
 }
 
-export default ProductReview;
+export default ProductView;
