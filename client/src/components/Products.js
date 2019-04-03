@@ -1,10 +1,16 @@
 import React from "react";
-import { Card, Header, } from "semantic-ui-react";
+import { Button, Card, Header, } from "semantic-ui-react";
+import axios from "axios"
+import { Link, } from "react-router-dom";
 
 class Products extends React.Component {
   state = { products: [], };
 
   componentDidMount() {
+    axios.get("/api/products")
+      .then( res => {
+        this.setState({ products: res.data, })
+      })
   
   }
 
@@ -30,6 +36,11 @@ class Products extends React.Component {
     return (
       <div>
         <Header as="h1">Products</Header>
+        <br />
+        <Button as={Link} color="blue" to="/products/new">
+          Add Product
+        </Button>
+        <br />
         <br />
         <Card.Group>
           { this.renderProducts() }

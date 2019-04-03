@@ -14,7 +14,12 @@ const Navbar = () => (
         About
       </Menu.Item>
     </Link>
-  </Menu>
+    <Link to="/products">
+      <Menu.Item>
+        Products
+      </Menu.Item>
+    </Link>
+  </Menu> 
 )
 
 export default Navbar;
